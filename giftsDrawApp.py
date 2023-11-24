@@ -24,6 +24,7 @@ class GiftsDrawApp:
             person.exclude_list = [excludedPerson.strip() for excludedPerson in exclusion_input]
 
     def draw_gift_recipient(self, person):
+        #available_choices do poprawy, wywala out of range
         available_choices = [recipient for recipient in self.people if recipient != person and recipient.name not in person.exclude_list and person not in self.occupied]
         recipient = random.choice(available_choices)
         self.occupied.append(recipient)
